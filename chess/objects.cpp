@@ -1,15 +1,13 @@
 //
-//  main.cpp
+//  objects.cpp
 //  chess
 //
 //  Created by Sebastian Knell on 7/16/19.
 //  Copyright © 2019 Sebastian Knell. All rights reserved.
 //
 
-#include <iostream>
-#include "board.hpp"
+#include "objects.hpp"
 
-int main() {
-	Board board1;
-	return 0;
+Object::Object(string name) {
+	this->name = name;
 }
