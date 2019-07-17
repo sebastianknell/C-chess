@@ -14,7 +14,7 @@
 
 class Bishop : public Object {
 public:
-	Bishop(int x, int y);
+	Bishop(int x, int y, int p);
 	virtual ~Bishop() {};
 	bool canMove(int x, int y) override;
 };

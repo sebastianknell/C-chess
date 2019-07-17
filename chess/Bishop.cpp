@@ -8,8 +8,9 @@
 
 #include "Bishop.hpp"
 
-Bishop::Bishop(int x, int y):Object() {
+Bishop::Bishop(int x, int y, int p):Object() {
 	name = 'B';
+	player = p;
 	setPosX(x);
 	setPosY(y);
 }

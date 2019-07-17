@@ -8,8 +8,9 @@
 
 #include "rook.hpp"
 
-Rook::Rook(int x, int y):Object() {
+Rook::Rook(int x, int y, int p):Object() {
 	name = 'R';
+	player = p;
 	setPosX(x);
 	setPosY(y);
 }

@@ -14,7 +14,7 @@
 
 class Rook : public Object {
 public:
-	Rook(int x, int y);
+	Rook(int x, int y, int p);
 	virtual ~Rook() {};
 	bool canMove(int x, int y) override;
 };

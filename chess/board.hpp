@@ -18,12 +18,29 @@ using namespace std;
 #include "objects.hpp"
 #include "rook.hpp"
 #include "Bishop.hpp"
+#include "king.hpp"
+#include "queen.hpp"
+#include "pawn.hpp"
+#include "horse.hpp"
 
 class Board {
 	int size = 8;
 	vector<vector<char>> board;
-	vector<Object*> v1 = {new Rook(7, 0), new Rook(7, 7),
-		new Bishop(7, 2), new Bishop(7, 5)
+	vector<Object*> v1 = {
+		// Player 1
+		new Rook(7, 0, 1), new Rook(7, 7, 1),
+		new Bishop(7, 2, 1), new Bishop(7, 5, 1),
+		new Horse(7, 1, 1), new Horse(7, 6, 1),
+		new Queen(7, 3, 1), new King(7, 4, 1),
+		new Pawn(6, 0, 1), new Pawn(6, 1, 1), new Pawn(6, 2, 1), new Pawn(6, 3, 1),
+		new Pawn(6, 4, 1), new Pawn(6, 5, 1), new Pawn(6, 6, 1), new Pawn(6, 7, 1),
+		// Player 2
+		new Rook(0, 0, 2), new Rook(0, 7, 2),
+		new Bishop(0, 2, 2), new Bishop(0, 5, 2),
+		new Horse(0, 1, 2), new Horse(0, 6, 2),
+		new Queen(0, 3, 2), new King(0, 4, 2),
+		new Pawn(1, 0, 2), new Pawn(1, 1, 2), new Pawn(1, 2, 2), new Pawn(1, 3, 2),
+		new Pawn(1, 4, 2), new Pawn(1, 5, 2), new Pawn(1, 6, 2), new Pawn(1, 7, 2)
 	};
 public:
 	Board();
