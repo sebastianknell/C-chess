@@ -16,11 +16,17 @@ using namespace std;
 
 class Object {
 protected:
-	string name;
+	char name;
+	int posX, posY, player;
 public:
-	Object(string name);
-	virtual ~Object();
-	void canMove();
+	Object() {};
+	virtual ~Object() {};
+	void setPosX(int x) {posX = x;};
+	void setPosY(int y) {posY = y;};
+	int getPosX() {return posX;};
+	int getPosY() {return posY;};
+	char getName() {return name;};
+	virtual bool canMove(int x, int y) = 0;
 	void eat();
 };
 

@@ -9,19 +9,32 @@
 #ifndef board_hpp
 #define board_hpp
 
-#include "objects.hpp"
 #include <stdio.h>
+#include <iostream>
 #include <string>
 #include <vector>
 using namespace std;
 
+#include "objects.hpp"
+#include "rook.hpp"
+#include "Bishop.hpp"
+
 class Board {
 	int size = 8;
-	vector<int> board = {0};
-	vector<Object*> objects;
+	vector<vector<char>> board;
+	vector<Object*> v1 = {new Rook(7, 0), new Rook(7, 7),
+		new Bishop(7, 2), new Bishop(7, 5)
+	};
 public:
 	Board();
-	virtual ~Board();
+	virtual ~Board() {};
+	void moveObject();
+	void removeObject();
+	void checkmate();
+	void drown();
+	void printBoard();
+	void updateBoard();
 };
 
 #endif /* board_hpp */
+

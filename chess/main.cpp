@@ -11,5 +11,7 @@
 
 int main() {
 	Board board1;
+	board1.updateBoard();
+	board1.printBoard();
 	return 0;
 }

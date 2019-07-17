@@ -8,6 +8,3 @@
 
 #include "objects.hpp"
 
-Object::Object(string name) {
-	this->name = name;
-}

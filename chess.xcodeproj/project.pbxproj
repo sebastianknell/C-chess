@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F84C56422DE8A8D00173130 /* rook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F84C56222DE8A8D00173130 /* rook.cpp */; };
+		4F84C56A22DECC5A00173130 /* Bishop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F84C56822DECC5A00173130 /* Bishop.cpp */; };
 		4FED3FC922DE454B00EE8A12 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FED3FC822DE454B00EE8A12 /* main.cpp */; };
 		4FED3FD122DE458700EE8A12 /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FED3FCF22DE458700EE8A12 /* board.cpp */; };
 		4FED3FD422DE45D400EE8A12 /* objects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FED3FD222DE45D400EE8A12 /* objects.cpp */; };
@@ -25,6 +27,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4F84C56222DE8A8D00173130 /* rook.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rook.cpp; sourceTree = "<group>"; };
+		4F84C56322DE8A8D00173130 /* rook.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rook.hpp; sourceTree = "<group>"; };
+		4F84C56822DECC5A00173130 /* Bishop.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bishop.cpp; sourceTree = "<group>"; };
+		4F84C56922DECC5A00173130 /* Bishop.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Bishop.hpp; sourceTree = "<group>"; };
 		4FED3FC522DE454B00EE8A12 /* chess */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = chess; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FED3FC822DE454B00EE8A12 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4FED3FCF22DE458700EE8A12 /* board.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = board.cpp; sourceTree = "<group>"; };
@@ -64,10 +70,14 @@
 			isa = PBXGroup;
 			children = (
 				4FED3FC822DE454B00EE8A12 /* main.cpp */,
-				4FED3FD022DE458700EE8A12 /* board.hpp */,
 				4FED3FCF22DE458700EE8A12 /* board.cpp */,
-				4FED3FD322DE45D400EE8A12 /* objects.hpp */,
+				4FED3FD022DE458700EE8A12 /* board.hpp */,
 				4FED3FD222DE45D400EE8A12 /* objects.cpp */,
+				4FED3FD322DE45D400EE8A12 /* objects.hpp */,
+				4F84C56222DE8A8D00173130 /* rook.cpp */,
+				4F84C56322DE8A8D00173130 /* rook.hpp */,
+				4F84C56822DECC5A00173130 /* Bishop.cpp */,
+				4F84C56922DECC5A00173130 /* Bishop.hpp */,
 			);
 			path = chess;
 			sourceTree = "<group>";
@@ -128,6 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F84C56422DE8A8D00173130 /* rook.cpp in Sources */,
+				4F84C56A22DECC5A00173130 /* Bishop.cpp in Sources */,
 				4FED3FD422DE45D400EE8A12 /* objects.cpp in Sources */,
 				4FED3FD122DE458700EE8A12 /* board.cpp in Sources */,
 				4FED3FC922DE454B00EE8A12 /* main.cpp in Sources */,
