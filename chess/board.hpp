@@ -35,22 +35,23 @@ class Board {
 		new Pawn(6, 0, 1), new Pawn(6, 1, 1), new Pawn(6, 2, 1), new Pawn(6, 3, 1),
 		new Pawn(6, 4, 1), new Pawn(6, 5, 1), new Pawn(6, 6, 1), new Pawn(6, 7, 1),
 		// Player 2
-		new Rook(0, 0, 2), new Rook(0, 7, 2),
-		new Bishop(0, 2, 2), new Bishop(0, 5, 2),
-		new Horse(0, 1, 2), new Horse(0, 6, 2),
-		new Queen(0, 3, 2), new King(0, 4, 2),
-		new Pawn(1, 0, 2), new Pawn(1, 1, 2), new Pawn(1, 2, 2), new Pawn(1, 3, 2),
-		new Pawn(1, 4, 2), new Pawn(1, 5, 2), new Pawn(1, 6, 2), new Pawn(1, 7, 2)
+		new Rook(0, 0, -1), new Rook(0, 7, -1),
+		new Bishop(0, 2, -1), new Bishop(0, 5, -1),
+		new Horse(0, 1, -1), new Horse(0, 6, -1),
+		new Queen(0, 3, -1), new King(0, 4, -1),
+		new Pawn(1, 0, -1), new Pawn(1, 1, -1), new Pawn(1, 2, -1), new Pawn(1, 3, -1),
+		new Pawn(1, 4, -1), new Pawn(1, 5, -1), new Pawn(1, 6, -1), new Pawn(1, 7, -1)
 	};
 public:
 	Board();
 	virtual ~Board() {};
-	void moveObject();
+	void moveObject(int turn);
 	void removeObject();
-	void checkmate();
-	void drown();
+	bool checkmate();
+	bool drown();
 	void printBoard();
 	void updateBoard();
+	Object* Search(int x, int y);
 };
 
 #endif /* board_hpp */

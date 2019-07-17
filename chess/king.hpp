@@ -13,6 +13,7 @@
 #include "objects.hpp"
 
 class King : public Object {
+	bool check = false;
 public:
 	King(int x, int y, int p);
 	virtual ~King() {};

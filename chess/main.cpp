@@ -11,7 +11,14 @@
 
 int main() {
 	Board board1;
+	int turn = 1;
 	board1.updateBoard();
 	board1.printBoard();
+	while (true) {
+		board1.moveObject(turn);
+		board1.updateBoard();
+		board1.printBoard();
+		turn *= -1;
+	}
 	return 0;
 }

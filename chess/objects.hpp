@@ -26,6 +26,7 @@ public:
 	int getPosX() {return posX;};
 	int getPosY() {return posY;};
 	char getName() {return name;};
+	int getPlayer() {return player;};
 	virtual bool canMove(int x, int y) = 0;
 	void eat();
 };
