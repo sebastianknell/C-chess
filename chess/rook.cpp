@@ -16,5 +16,7 @@ Rook::Rook(int x, int y, int p):Object() {
 }
 
 bool Rook::canMove(int x, int y) {
-	return true;
+	if (!(x != posX) != !(y != posY))
+		return true;
+	return false;
 }

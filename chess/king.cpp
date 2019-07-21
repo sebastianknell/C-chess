@@ -16,5 +16,9 @@ King::King(int x, int y, int p):Object() {
 }
 
 bool King::canMove(int x, int y) {
-	return true;
+	if ((abs(posX - x) <= 1 && abs(posY - y) <= 1))
+		return true;
+	if (posX == x && posY == y)
+		return false;
+	return false;
 }

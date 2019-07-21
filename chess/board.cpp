@@ -36,7 +36,7 @@ void Board::printBoard() {
 	cout << "\n\n";
 }
 
-void Board::moveObject(int turn) {
+void Board::moveObject() {
 	int x, y, i, j;
 	Object* obj = nullptr;
 	do {
@@ -53,7 +53,10 @@ void Board::moveObject(int turn) {
 	if (obj->canMove(i, j)) {
 		obj->setPosX(i);
 		obj->setPosY(j);
+		//turn *= -1;
 	}
+	else
+		cout << "Invalid move\n";
 }
 
 Object* Board::Search(int x, int y) {

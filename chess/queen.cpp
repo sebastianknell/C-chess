@@ -16,5 +16,9 @@ Queen::Queen(int x, int y, int p):Object() {
 }
 
 bool Queen::canMove(int x, int y) {
+	if ((posX != x && posY != y) && (abs(posX - x) != abs(posY - y)))
+		return false;
+	if (posX == x && posY == y)
+		return false;
 	return true;
 }

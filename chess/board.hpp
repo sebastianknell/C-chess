@@ -45,7 +45,8 @@ class Board {
 public:
 	Board();
 	virtual ~Board() {};
-	void moveObject(int turn);
+	int turn = 1;
+	void moveObject();
 	void removeObject();
 	bool checkmate();
 	bool drown();

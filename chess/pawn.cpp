@@ -16,5 +16,22 @@ Pawn::Pawn(int x, int y, int p):Object() {
 }
 
 bool Pawn::canMove(int x, int y) {
-	return true;
+	if (getPlayer() == 1) {
+		if (posX == 6 && (posX - x == 1 || posX - x == 2) && abs(posY - y) == 0)
+			return true;
+		else {
+			if (posX - x == 1 && abs(posY - y) == 0)
+				return true;
+			return false;
+		}
+	}
+	else {
+		if (posX == 1 && (x - posX == 1 || x - posX == 2) && abs(posY - y) == 0)
+			return true;
+		else {
+			if (x - posX == 1 && abs(posY - y) == 0)
+				return true;
+			return false;
+		}
+	}
 }

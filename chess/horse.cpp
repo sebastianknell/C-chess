@@ -16,5 +16,7 @@ Horse::Horse(int x, int y, int p):Object() {
 }
 
 bool Horse::canMove(int x, int y) {
-	return true;
+	if ((abs(posX - x) == 1 && abs(posY - y) == 2) || (abs(posX - x) == 2 && abs(posY - y) == 1))
+		return true;
+	return false;
 }

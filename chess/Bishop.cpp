@@ -16,5 +16,7 @@ Bishop::Bishop(int x, int y, int p):Object() {
 }
 
 bool Bishop::canMove(int x, int y) {
-	return true;
+	if (abs(posX - x) == abs(posY - y) && posX != x && posY != y)
+		return true;
+	return false;
 }
