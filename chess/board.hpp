@@ -46,7 +46,8 @@ public:
 	Board();
 	virtual ~Board() {};
 	int turn = 1;
-	void moveObject();
+	void moveObject(Object* obj, int i, int j);
+	bool validMove(Object* obj, int i, int j);
 	void removeObject();
 	bool checkmate();
 	bool drown();

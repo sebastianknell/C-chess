@@ -19,7 +19,8 @@ class Game {
 	Board board1;
 public:
 	int getTurn() {return turn;};
-	void moveObject();
+	void takeTurn();
+	bool checkTurn(Object* obj);
 	void execute();
 };
 

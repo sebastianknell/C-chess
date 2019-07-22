@@ -43,29 +43,9 @@ void Board::printBoard() {
 	cout << "\n\n";
 }
 
-void Board::moveObject() {
-	int x, y, i, j;
-	Object* obj = nullptr;
-	do {
-		cout << "Object position (row, column): \n";
-		cin >> x;
-		cin >> y;
-		obj = Search(x, y);
-	}while(obj == nullptr || obj->getPlayer() != turn); // Change
-	
-	cout << "Destination position (row, column): \n";
-	do {
-		cin >> i;
-		cin >> j;
-	}while(i > 7 || i < 0 || j > 7 || j < 0);
-	
-	if (obj->canMove(i, j)) {
-		obj->setPosX(i);
-		obj->setPosY(j);
-		//turn *= -1;
-	}
-	else
-		cout << "Invalid move\n";
+void Board::moveObject(Object* obj, int i, int j) {
+	obj->setPosX(i);
+	obj->setPosY(j);
 }
 
 Object* Board::Search(int x, int y) {
@@ -75,4 +55,10 @@ Object* Board::Search(int x, int y) {
 	}
 	cout << "There's no object in that position\n";
 	return nullptr;
+}
+
+bool Board::validMove(Object *obj, int i, int j) {
+	if (obj->canMove(i, j))
+		return true;
+	return false;
 }
