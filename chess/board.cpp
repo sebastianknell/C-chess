@@ -27,10 +27,17 @@ void Board::updateBoard() {
 }
 
 void Board::printBoard() {
-	cout << "\n";
+	cout << "\n   ";
+	for (int i = 0; i < size; i++)
+		cout << i << "  ";
+	cout << "\n\n";
+	int i = 0;
 	for (auto &row : board) {
-		for (auto &item : row)
+		cout << i << "  ";
+		for (auto &item : row) {
 			cout << item << "  ";
+		}
+		i++;
 		cout << "\n";
 	}
 	cout << "\n\n";
@@ -40,15 +47,17 @@ void Board::moveObject() {
 	int x, y, i, j;
 	Object* obj = nullptr;
 	do {
-		cout << "Object position (x, y): \n";
+		cout << "Object position (row, column): \n";
 		cin >> x;
 		cin >> y;
 		obj = Search(x, y);
 	}while(obj == nullptr || obj->getPlayer() != turn); // Change
 	
-	cout << "Destination position (x, y): \n";
-	cin >> i;
-	cin >> j;
+	cout << "Destination position (row, column): \n";
+	do {
+		cin >> i;
+		cin >> j;
+	}while(i > 7 || i < 0 || j > 7 || j < 0);
 	
 	if (obj->canMove(i, j)) {
 		obj->setPosX(i);

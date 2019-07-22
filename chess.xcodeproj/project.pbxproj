@@ -16,6 +16,10 @@
 		4FED3FC922DE454B00EE8A12 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FED3FC822DE454B00EE8A12 /* main.cpp */; };
 		4FED3FD122DE458700EE8A12 /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FED3FCF22DE458700EE8A12 /* board.cpp */; };
 		4FED3FD422DE45D400EE8A12 /* objects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FED3FD222DE45D400EE8A12 /* objects.cpp */; };
+		4FEE4B7122E539C300AA5D21 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEE4B7022E539C300AA5D21 /* Cocoa.framework */; };
+		4FEE4B7322E539D000AA5D21 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEE4B7222E539D000AA5D21 /* GLUT.framework */; };
+		4FEE4B7522E539DA00AA5D21 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEE4B7422E539DA00AA5D21 /* OpenGL.framework */; };
+		4FEE4B7822E53C6E00AA5D21 /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEE4B7622E53C6E00AA5D21 /* game.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +53,11 @@
 		4FED3FD022DE458700EE8A12 /* board.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = board.hpp; sourceTree = "<group>"; };
 		4FED3FD222DE45D400EE8A12 /* objects.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = objects.cpp; sourceTree = "<group>"; };
 		4FED3FD322DE45D400EE8A12 /* objects.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = objects.hpp; sourceTree = "<group>"; };
+		4FEE4B7022E539C300AA5D21 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4FEE4B7222E539D000AA5D21 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		4FEE4B7422E539DA00AA5D21 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		4FEE4B7622E53C6E00AA5D21 /* game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
+		4FEE4B7722E53C6E00AA5D21 /* game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = game.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FEE4B7522E539DA00AA5D21 /* OpenGL.framework in Frameworks */,
+				4FEE4B7322E539D000AA5D21 /* GLUT.framework in Frameworks */,
+				4FEE4B7122E539C300AA5D21 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +79,7 @@
 			children = (
 				4FED3FC722DE454B00EE8A12 /* chess */,
 				4FED3FC622DE454B00EE8A12 /* Products */,
+				4FEE4B6F22E539C300AA5D21 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				4FED3FC822DE454B00EE8A12 /* main.cpp */,
+				4FEE4B7622E53C6E00AA5D21 /* game.cpp */,
+				4FEE4B7722E53C6E00AA5D21 /* game.hpp */,
 				4FED3FCF22DE458700EE8A12 /* board.cpp */,
 				4FED3FD022DE458700EE8A12 /* board.hpp */,
 				4FED3FD222DE45D400EE8A12 /* objects.cpp */,
@@ -100,6 +115,16 @@
 				4FB1DB5A22DFC3C400FEF5CB /* horse.hpp */,
 			);
 			path = chess;
+			sourceTree = "<group>";
+		};
+		4FEE4B6F22E539C300AA5D21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FEE4B7422E539DA00AA5D21 /* OpenGL.framework */,
+				4FEE4B7222E539D000AA5D21 /* GLUT.framework */,
+				4FEE4B7022E539C300AA5D21 /* Cocoa.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +186,7 @@
 				4F84C56422DE8A8D00173130 /* rook.cpp in Sources */,
 				4FB1DB5B22DFC3C400FEF5CB /* horse.cpp in Sources */,
 				4F84C56A22DECC5A00173130 /* Bishop.cpp in Sources */,
+				4FEE4B7822E53C6E00AA5D21 /* game.cpp in Sources */,
 				4FB1DB5222DFC29000FEF5CB /* king.cpp in Sources */,
 				4FB1DB5522DFC2F900FEF5CB /* queen.cpp in Sources */,
 				4FED3FD422DE45D400EE8A12 /* objects.cpp in Sources */,

@@ -7,16 +7,10 @@
 //
 
 #include <iostream>
-#include "board.hpp"
+#include "game.hpp"
 
 int main() {
-	Board board1;
-	board1.updateBoard();
-	board1.printBoard();
-	while (true) {
-		board1.moveObject();
-		board1.updateBoard();
-		board1.printBoard();
-	}
+	Game chess;
+	chess.execute();
 	return 0;
 }
