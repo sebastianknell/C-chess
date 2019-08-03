@@ -33,16 +33,18 @@ void Game::takeTurn() {
 		target = board1.Search(i, j);
 		x0 = obj->getPosX();
 		y0 = obj->getPosY();
-		if (board1.validMove(obj, i, j)) {
+		if (board1.validMove(obj, i, j)) { // Doesn't work yet
 			board1.moveObject(obj, i, j);
-			if (target != nullptr)
-				board1.removeObject(target);
+			board1.removeFromBoard(target);
+			// Check whether it's still in check
 			if (board1.check(turn)) {
+				// Put things as they were
 				board1.moveObject(obj, x0, y0);
-				if (target != nullptr)
-					board1.addObject(target);
+				board1.addObject(target);
 				cout << "Invalid move\n";
+				return;
 			}
+			delete target;
 			turn *= -1;
 		}
 		else
@@ -54,8 +56,7 @@ void Game::takeTurn() {
 		target = board1.Search(i, j);
 		if (board1.validMove(obj, i, j)) {
 			board1.moveObject(obj, i, j);
-			if (target != nullptr)
-				board1.removeObject(target); // Got error "Pointer being freed was not allocated"
+			deleteObject(target);
 			turn *= -1;
 		}
 		else
@@ -88,4 +89,11 @@ void Game::askDestination(int &i, int &j) {
 		cin >> i;
 		cin >> j;
 	}while(i > 7 || i < 0 || j > 7 || j < 0);
+}
+
+void Game::deleteObject(Object* target) {
+	if (target != nullptr) {
+		board1.removeFromBoard(target);
+		delete target;
+	}
 }

@@ -47,7 +47,7 @@ public:
 	virtual ~Board() {};
 	void moveObject(Object* obj, int i, int j);
 	bool validMove(Object* obj, int i, int j);
-	void removeObject(Object* obj);
+	void removeFromBoard(Object* obj);
 	void addObject(Object* obj);
 	bool checkmate(int player);
 	bool drown();

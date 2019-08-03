@@ -24,6 +24,7 @@ public:
 	void execute();
 	void askPosition(Object* &obj);
 	void askDestination(int &i, int &j);
+	void deleteObject(Object* target);
 };
 
 #endif /* game_hpp */

@@ -73,7 +73,7 @@ bool Board::validMove(Object *obj, int i, int j) {
 		bool v = true;
 		moveObject(obj, i, j);
 		if (target != nullptr)
-			removeObject(target);
+			removeFromBoard(target);
 		if (check(obj->getPlayer()))
 			v = false;
 		// Put the things as they were
@@ -173,15 +173,14 @@ bool Board::checkSpaces(int x0, int y0, int i, int j) {
 	return true;
 }
 
-void Board::removeObject(Object* obj) {
-	for (auto &pointer : v1) {
-		if (pointer->getPosX() == obj->getPosX() && pointer->getPosY() == pointer->getPosY()
-			&& pointer->getPlayer() == obj->getPlayer()) {
-			delete pointer;
-			pointer = nullptr;
+void Board::removeFromBoard(Object* obj) {
+	if (obj != nullptr) {
+		for (int i = 0; i < v1.size(); i++) {
+			if (v1[i]->getPosX() == obj->getPosX() && v1[i]->getPosY() == obj->getPosY()
+				&& v1[i]->getPlayer() == obj->getPlayer())
+				v1.erase(v1.begin() + i);
 		}
 	}
-	v1.erase(remove(v1.begin(), v1.end(), nullptr), v1.end());
 }
 
 void Board::addObject(Object *obj) {
