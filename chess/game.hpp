@@ -22,6 +22,8 @@ public:
 	void takeTurn();
 	bool checkTurn(Object* obj);
 	void execute();
+	void askPosition(Object* &obj);
+	void askDestination(int &i, int &j);
 };
 
 #endif /* game_hpp */

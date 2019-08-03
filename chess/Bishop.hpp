@@ -17,6 +17,7 @@ public:
 	Bishop(int x, int y, int p);
 	virtual ~Bishop() {};
 	bool canMove(int x, int y) override;
+	bool canEat(int x, int y) override;
 };
 
 #endif /* Bishop_hpp */

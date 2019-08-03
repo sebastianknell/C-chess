@@ -17,6 +17,7 @@ public:
 	Horse(int x, int y, int p);
 	virtual ~Horse() {};
 	bool canMove(int x, int y) override;
+	bool canEat(int x, int y) override;
 };
 
 #endif /* horse_hpp */

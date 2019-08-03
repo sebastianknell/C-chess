@@ -20,3 +20,7 @@ bool Bishop::canMove(int x, int y) {
 		return true;
 	return false;
 }
+
+bool Bishop::canEat(int x, int y) {
+	return true;
+}

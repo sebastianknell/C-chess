@@ -28,7 +28,7 @@ public:
 	char getName() {return name;};
 	int getPlayer() {return player;};
 	virtual bool canMove(int x, int y) = 0;
-	void eat();
+	virtual bool canEat(int x, int y) = 0;
 };
 
 #endif /* objects_hpp */

@@ -35,3 +35,15 @@ bool Pawn::canMove(int x, int y) {
 		}
 	}
 }
+
+bool Pawn::canEat(int x, int y) {
+	if (getPlayer() == 1) {
+		if (posX - x == 1 && (posY - y == 1 || posY - y == -1))
+			return true;
+	}
+	else {
+		if (posX - x == -1 && (posY - y == 1 || posY - y == -1))
+			return true;
+	}
+	return false;
+}

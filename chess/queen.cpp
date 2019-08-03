@@ -22,3 +22,7 @@ bool Queen::canMove(int x, int y) {
 		return false;
 	return true;
 }
+
+bool Queen::canEat(int x, int y) {
+	return true;
+}

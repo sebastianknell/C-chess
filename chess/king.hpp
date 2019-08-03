@@ -13,11 +13,11 @@
 #include "objects.hpp"
 
 class King : public Object {
-	bool check = false;
 public:
 	King(int x, int y, int p);
 	virtual ~King() {};
 	bool canMove(int x, int y) override;
+	bool canEat(int x, int y) override;
 };
 
 #endif /* king_hpp */

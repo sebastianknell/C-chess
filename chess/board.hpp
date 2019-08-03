@@ -45,15 +45,18 @@ class Board {
 public:
 	Board();
 	virtual ~Board() {};
-	int turn = 1;
 	void moveObject(Object* obj, int i, int j);
 	bool validMove(Object* obj, int i, int j);
-	void removeObject();
-	bool checkmate();
+	void removeObject(Object* obj);
+	void addObject(Object* obj);
+	bool checkmate(int player);
 	bool drown();
+	bool check(int player);
 	void printBoard();
 	void updateBoard();
 	Object* Search(int x, int y);
+	Object* searchByName(char name, int player); // Only works for king and queen
+	bool checkSpaces(int x, int y, int i, int j);
 };
 
 #endif /* board_hpp */

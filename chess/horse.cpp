@@ -20,3 +20,7 @@ bool Horse::canMove(int x, int y) {
 		return true;
 	return false;
 }
+
+bool Horse::canEat(int x, int y) {
+	return true;
+}

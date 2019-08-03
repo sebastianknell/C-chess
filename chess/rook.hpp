@@ -17,6 +17,7 @@ public:
 	Rook(int x, int y, int p);
 	virtual ~Rook() {};
 	bool canMove(int x, int y) override;
+	bool canEat(int x, int y) override;
 };
 
 #endif /* rook_hpp */

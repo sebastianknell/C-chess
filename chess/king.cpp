@@ -22,3 +22,7 @@ bool King::canMove(int x, int y) {
 		return false;
 	return false;
 }
+
+bool King::canEat(int x, int y) {
+	return true;
+}

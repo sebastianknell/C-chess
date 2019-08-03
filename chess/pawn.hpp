@@ -17,6 +17,7 @@ public:
 	Pawn(int x, int y, int p);
 	virtual ~Pawn() {};
 	bool canMove(int x, int y) override;
+	bool canEat(int x, int y) override;
 };
 
 #endif /* pawn_hpp */

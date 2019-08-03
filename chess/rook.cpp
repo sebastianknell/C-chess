@@ -20,3 +20,7 @@ bool Rook::canMove(int x, int y) {
 		return true;
 	return false;
 }
+
+bool Rook::canEat(int x, int y) {
+	return true;
+}

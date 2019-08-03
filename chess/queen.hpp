@@ -17,6 +17,7 @@ public:
 	Queen(int x, int y, int p);
 	virtual ~Queen() {};
 	bool canMove(int x, int y) override;
+	bool canEat(int x, int y) override;
 };
 
 #endif /* queen_hpp */
