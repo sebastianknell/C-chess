@@ -56,7 +56,7 @@ Object* Board::Search(int x, int y) {
 	}
 	return nullptr;
 }
-
+// MARK: FIX
 bool Board::validMove(Object *obj, int i, int j) {
 	int x0 = obj->getPosX();
 	int y0 = obj->getPosY();
@@ -64,22 +64,21 @@ bool Board::validMove(Object *obj, int i, int j) {
 	// You can't eat objects from your team
 	if (target != nullptr && target->getPlayer() == obj->getPlayer())
 		return false;
-	// Pawns eat in a different way than they move
-	if (obj->getName() == 'P' && obj->canEat(i, j) && target != nullptr)
-		return true;
 	
-	if (obj->canMove(i, j) && checkSpaces(x0, y0, i, j)) {
-		// Will the player be in check if the object moved?
+	if ((obj->canMove(i, j) && checkSpaces(x0, y0, i, j)) ||
+		// Pawns eat in a different way than they move
+		(obj->getName() == 'P' && obj->canEat(i, j) && target != nullptr)) {
+			// Will the player be in check if the object moves?
 		bool v = true;
 		moveObject(obj, i, j);
-		if (target != nullptr)
-			removeFromBoard(target);
+		removeFromBoard(target);
+		updateBoard();
 		if (check(obj->getPlayer()))
 			v = false;
 		// Put the things as they were
 		moveObject(obj, x0, y0);
-		if (target != nullptr)
-			v1.emplace_back(target);
+		addObject(target);
+		updateBoard();
 		return v;
 	}
 	return false;
@@ -172,7 +171,7 @@ bool Board::checkSpaces(int x0, int y0, int i, int j) {
 	}
 	return true;
 }
-
+// Could be shorter
 void Board::removeFromBoard(Object* obj) {
 	if (obj != nullptr) {
 		for (int i = 0; i < v1.size(); i++) {
@@ -184,7 +183,8 @@ void Board::removeFromBoard(Object* obj) {
 }
 
 void Board::addObject(Object *obj) {
-	v1.emplace_back(obj);
+	if (obj != nullptr)
+		v1.emplace_back(obj);
 }
 
 bool Board::checkmate(int player) {

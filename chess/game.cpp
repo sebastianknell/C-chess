@@ -33,22 +33,24 @@ void Game::takeTurn() {
 		target = board1.Search(i, j);
 		x0 = obj->getPosX();
 		y0 = obj->getPosY();
+//		MARK: FIX
 		if (board1.validMove(obj, i, j)) { // Doesn't work yet
 			board1.moveObject(obj, i, j);
 			board1.removeFromBoard(target);
+			board1.updateBoard();
 			// Check whether it's still in check
 			if (board1.check(turn)) {
 				// Put things as they were
 				board1.moveObject(obj, x0, y0);
 				board1.addObject(target);
-				cout << "Invalid move\n";
+				cout << "Invalid move2\n";
 				return;
 			}
 			delete target;
 			turn *= -1;
 		}
 		else
-			cout << "Invalid move\n";
+			cout << "Invalid move1\n";
 	}
 	else {
 		askPosition(obj);
